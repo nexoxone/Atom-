@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Esfera de átomos · Control con las manos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="escena"></canvas>
+
+  <div id="hud">
+    <h1>Esfera de átomos</h1>
+    <p id="estado">Pulsa «Activar cámara» para controlarlo con las manos.</p>
+    <ul>
+      <li><b>Mover la mano</b> → gira la esfera</li>
+      <li><b>Pinza pulgar + índice</b> → acerca / aleja (zoom)</li>
+      <li><b>Abrir / cerrar los otros dedos</b> → separa los átomos / vuelve a juntar</li>
+      <li><b>Dos manos</b> → separarlas o juntarlas hace zoom</li>
+      <li><i>Sin cámara:</i> arrastra con el ratón, rueda = zoom, Espacio = dispersar</li>
+    </ul>
+  </div>
+
+  <button id="btnIniciar">Activar cámara</button>
+
+  <div id="camara">
+    <video id="video" playsinline muted></video>
+    <canvas id="landmarks"></canvas>
+  </div>
+
+  <!-- Librerías (se cargan desde internet) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>

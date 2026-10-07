@@ -1,0 +1,89 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #02030a;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #bfefff;
+}
+
+#escena {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#hud {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  max-width: 340px;
+  padding: 14px 16px;
+  border: 1px solid rgba(80, 220, 255, 0.25);
+  border-radius: 12px;
+  background: rgba(2, 10, 24, 0.55);
+  backdrop-filter: blur(6px);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+#hud h1 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5fe6ff;
+  margin-bottom: 6px;
+}
+
+#hud #estado { margin-bottom: 8px; color: #fff; }
+#hud ul { list-style: none; opacity: 0.85; }
+#hud li { margin-bottom: 3px; }
+
+#btnIniciar {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  padding: 12px 26px;
+  border: 1px solid #5fe6ff;
+  border-radius: 999px;
+  background: rgba(10, 40, 70, 0.6);
+  color: #dffaff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+#btnIniciar:hover {
+  background: rgba(20, 80, 120, 0.8);
+  box-shadow: 0 0 18px rgba(80, 230, 255, 0.5);
+}
+#btnIniciar.oculto { display: none; }
+
+#camara {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 220px;
+  aspect-ratio: 4 / 3;
+  border: 1px solid rgba(80, 220, 255, 0.35);
+  border-radius: 10px;
+  overflow: hidden;
+  transform: scaleX(-1); /* efecto espejo */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+#camara.activa { opacity: 1; }
+
+#camara video,
+#camara canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#camara video { opacity: 0.55; }
